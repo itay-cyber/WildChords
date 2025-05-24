@@ -11,11 +11,31 @@ namespace WildChords
 {
     internal class Program
     {
-        const string FILENAME = "C:\\Users\\itayk\\source\\repos\\WildChords\\WildChords\\Frequencies.txt";
+        public const string FILENAME = "C:\\Users\\itayk\\source\\repos\\WildChords\\WildChords\\Frequencies.txt";
 
 		static void Main(string[] args)
         {
-            SineWavePlayer player = new SineWavePlayer();
+            Chord csharpminor = new Chord("Cm");
+           
+            FrequencyHashTable A = new FrequencyHashTable(FILENAME);
+            Node<Note>[] NoteHash = A.hash();
+            Node<Note> P = NoteHash[0];
+            for(int i = 0; i<24; i++)
+            {
+                while(P != null)
+                {
+                    string s = P.GetValue().GetNote();
+                    Console.Write(s + ", ");
+                }
+                Console.WriteLine("");
+                P = NoteHash[i]; 
+            }
+
+
+
+
+
+            /*SineWavePlayer player = new SineWavePlayer();
             FrequencyReader reader = new FrequencyReader(FILENAME);
             Note csharp = new Note(reader.GetFrequency("C#4"), "C#");
             Note e = new Note(reader.GetFrequency("E4"), "E");
@@ -28,7 +48,7 @@ namespace WildChords
             player.PlayNote(gsharp, 1);
             player.PlayNote(b, 1);
             player.PlayNote(dsharp, 1);
-            Thread.Sleep(2000);
+            Thread.Sleep(2000);*/
         }
     }
 }

@@ -44,5 +44,6 @@ namespace WildChords
 			}
 			return dFreq;
 		}
+		
 	}
 }
