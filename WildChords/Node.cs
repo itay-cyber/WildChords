@@ -32,6 +32,7 @@ namespace WildChords
 		{
 			_value = value;
 		}
+		
 	}
 
 }

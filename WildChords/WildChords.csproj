@@ -74,9 +74,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chord.cs" />
+    <Compile Include="FrequencyDict.cs" />
     <Compile Include="Intervals.cs" />
     <Compile Include="FrequencyReader.cs" />
-    <Compile Include="FrequencyHashTable.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Program.cs" />

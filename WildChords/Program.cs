@@ -15,27 +15,14 @@ namespace WildChords
 
 		static void Main(string[] args)
         {
-            Chord csharpminor = new Chord("Cm");
-           
-            FrequencyHashTable A = new FrequencyHashTable(FILENAME);
-            Node<Note>[] NoteHash = A.hash();
-            Node<Note> P = NoteHash[0];
-            for(int i = 0; i<24; i++)
-            {
-                while(P != null)
-                {
-                    string s = P.GetValue().GetNote();
-                    Console.Write(s + ", ");
-                }
-                Console.WriteLine("");
-                P = NoteHash[i]; 
-            }
+            FrequencyDict FD = new FrequencyDict(FILENAME);
+            FD.printdic();
+			/*SineWavePlayer player = new SineWavePlayer();
+			Chord csharpminor = new Chord("#");
+            csharpminor.PlayChord(player, 1);
+            Console.Read();*/
 
-
-
-
-
-            /*SineWavePlayer player = new SineWavePlayer();
+            /*
             FrequencyReader reader = new FrequencyReader(FILENAME);
             Note csharp = new Note(reader.GetFrequency("C#4"), "C#");
             Note e = new Note(reader.GetFrequency("E4"), "E");
