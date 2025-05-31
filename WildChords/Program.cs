@@ -15,12 +15,8 @@ namespace WildChords
 
 		static void Main(string[] args)
         {
-            FrequencyDict FD = new FrequencyDict(FILENAME);
-            FD.printdic();
-			/*SineWavePlayer player = new SineWavePlayer();
-			Chord csharpminor = new Chord("#");
-            csharpminor.PlayChord(player, 1);
-            Console.Read();*/
+            
+            FrequencyDict.printdic();
 
             /*
             FrequencyReader reader = new FrequencyReader(FILENAME);

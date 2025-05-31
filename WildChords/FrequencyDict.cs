@@ -9,10 +9,12 @@ namespace WildChords
 {
 	internal class FrequencyDict
 	{
-        private Dictionary<int, Node<Note>> freqDict;
-        StreamReader read;
+        private static string _filename = "C:\\\\Users\\\\itayk\\\\source\\\\repos\\\\WildChords\\\\WildChords\\\\Frequencies.txt";
 
-        public FrequencyDict(string _filename)
+		private static Dictionary<int, Node<Note>> freqDict;
+        private static StreamReader read;
+
+        static FrequencyDict()
         {
             freqDict = new Dictionary<int, Node<Note>>();
             read = new StreamReader(_filename);
@@ -37,7 +39,7 @@ namespace WildChords
                 line = read.ReadLine();
             }
         }
-        private Node<Note> FindNote(string line)
+        private static Node<Note> FindNote(string line)
         {
             if(line == "") return null;
 
@@ -58,7 +60,7 @@ namespace WildChords
 
         }
         
-        public void printdic()
+        public static void printdic()
         {
             for(int i = 0; i < freqDict.Count; i++)
             {
@@ -70,6 +72,10 @@ namespace WildChords
                 }
                 Console.WriteLine();
             }
+        }
+        public static Node<Note> FindNote(int index)
+        {
+            return freqDict[index]
         }
     }
  

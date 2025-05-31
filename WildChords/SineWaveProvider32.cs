@@ -34,9 +34,9 @@ namespace WildChords
 	public class SineWavePlayer
 	{
 		// play a specific note
-		public void PlayNote(Note n, float durationS)
+		public void PlayNote(Note n, float durationSec)
 		{
-			PlayTone(n.GetFrequency(), durationS);
+			PlayTone(n.GetFrequency(), durationSec);
 		}
 		// play a specific frequency
 		private void PlayTone(double frequency, float durationSeconds)
